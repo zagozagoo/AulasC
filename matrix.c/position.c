@@ -12,7 +12,7 @@ int main ()
 
     int matrix[rows][columns];
 
-    for (int i = 0; i < rows; i++)
+    for (i = 0; i < rows; i++)
     {
         for (int j = 0; j < columns; j++)
         {
@@ -21,7 +21,7 @@ int main ()
         }
     }
 
-    for (int i = 0; i < rows; i++)
+    for (i = 0; i < rows; i++)
     {
         for (int j = 0; j < columns; j++)
         {
@@ -30,20 +30,21 @@ int main ()
         printf("\n");
     }
 
-}
+    int highest_number = -32768;
+    int highest_row, highest_column;
 
-int highest_number = -32768;
-
-for(int k = 0; k < rows; k++)
-{
-    for(int j = 0; j < columns; j++)
+    for (int i = 0; i < rows; i++)
     {
-        if (matrix[i][j] > highest_number)
+        for (int j = 0; j < columns; j++)
         {
-            highest_number = matrix[i][j];
+            if (matrix[i][j] > highest_number)
+            {
+                highest_number = matrix[i][j];
+
+                highest_column = j;
+                highest_row = i;
+            }
         }
     }
+    printf("")
 }
-
-
-
