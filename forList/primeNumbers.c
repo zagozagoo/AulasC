@@ -2,11 +2,18 @@
 //inserido pelo usuário.
 #include <stdio.h>
 
+int getNumberFromUser()
+{
+    int value;
+    printf("\nEnter the desired number: ");
+    scanf("%i", &value);
+    return value;
+}
+
 int main()
 {
     int value, i, isPrime = 1;
-    printf("\nEnter the desired number: ");
-    scanf("%i", &value);
+    value = getNumberFromUser();
 
     if(value <= 1)
     {
@@ -26,11 +33,11 @@ int main()
     
     if(isPrime)
     {
-        printf("%i is a prime number!", value);
+        printf("\n%i is a prime number!", value);
     }
     else
     {
-        printf("%i is not a prime number!", value);
+        printf("\n%i is not a prime number!", value);
     }
     return 0;
 }
