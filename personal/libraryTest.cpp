@@ -2,7 +2,7 @@
 
 int main()
 {
-    int number = 45;
+    int number = -0;
     int absoluteValue = absolute(number);
     printf("The abs is %i", absoluteValue); 
     return 0;
