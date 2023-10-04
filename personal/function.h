@@ -4,17 +4,20 @@
 #define MATHFUNCTIONS_H
 #include <stdio.h>
 
-int absolute(int number)
+template<typename T>
+T absolute(T number)
 { 
     return (number < 0) ? -number : number;
 }
 
-int minimum(int first_number, int second_number) 
+template<typename T>
+T minimum(T first_number, T second_number) 
 {
     return (first_number > second_number) ? second_number : first_number;
 }
 
-int maximum(int first_number, int second_number)
+template<typename T>
+T maximum(T first_number, T second_number)
 {
     return (first_number > second_number) ? first_number : second_number;
 }
