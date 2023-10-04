@@ -1,6 +1,6 @@
-#include <stdio.h>
 #ifndef ARRFUNCTIONS_H
 #define ARRFUNCTIONS_H
+#include <stdio.h>
 
 int receiveValues(int *arr1, int *arr2)
 {
