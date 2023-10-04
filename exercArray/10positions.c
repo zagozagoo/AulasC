@@ -44,31 +44,31 @@ int main()
     switch (option)
     {
     case 1:
-        printf("Result: %i\n", array[first_position] + array[second_position]);
+        printf("\nResult: %i\n", array[first_position] + array[second_position]);
         break;
     case 2:
-        printf("Result: %i\n", array[first_position] - array[second_position]);
+        printf("\nResult: %i\n", array[first_position] - array[second_position]);
         break;
     case 3:
-        printf("Result: %i\n", array[first_position] * array[second_position]);
+        printf("\nResult: %i\n", array[first_position] * array[second_position]);
         break;
     case 4:
         if (array[second_position] != 0)
         {
-            printf("Result: %f\n", (float)array[first_position] / array[second_position]);
+            printf("\nResult: %f\n", (float)array[first_position] / array[second_position]);
         }
         else
         {
-            printf("Division by zero is not allowed.\n");
+            printf("\nDivision by zero is not allowed.\n");
         }
         break;
     case 5:
-        printf("Exiting...\n");
+        printf("\nExiting...\n");
         break;
     default:
-        printf("Invalid Option!\n");
+        printf("\nInvalid Option!\n");
         break;
     }
-    
+
     return 0;
 }
