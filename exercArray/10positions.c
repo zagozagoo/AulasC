@@ -2,67 +2,20 @@
 //para fazer algum dos cálculos básicos (soma, subtração, divisão, multiplicação)
 #include <stdio.h>
 
-int i;
-int j;
-int first_position[i];
-int second_position[j];
-
-void receiveValues(int arr1)
+void receiveValues(int arr[])
 {
     for (int i = 0; i < 10; i++)
     {
-        for (int j = 0; j < 10; j++)
-        {
-            printf("\nFirst array value in position %d \n", i);
-            scanf("%i", &arr1[i]);
-            printf("\nFirst array value in position %d \n", i);
-            scanf("%i", &arr1[i]);
-        }
+        printf("\nFirst array value in position %d \n", i);
+        scanf("%i", &arr[i]);
     }
 }
 
-int selectPositions()
+void selectPositions(int *first, int *second)
 {
     printf("\nSelect two positions: ");
-    scanf("%i %i", &first_position, &second_position);
-}
-
-void options()
-{
-    int option;
-
-    while(1)
-    {
-        printf("\nSelect the desired operation: \n");
-        printf("\n1. Sum");
-        printf("\n2. Subtraction");
-        printf("\n3. Multiplication");
-        printf("\n4. Division");
-        printf("\n5. Exit\n");
-        scanf("%i", &option);
-
-        switch(option)
-        {
-        case 1:
-            first_position + second_position;
-            break;
-        case 2:
-            first_position - second_position;
-            break;
-        case 3:
-            first_position * second_position;
-            break;
-        case 4:
-            first_position / second_position;
-            break;
-        case 5:
-            printf("\nClosing...");
-            return 0;
-        default:
-            printf("\nInvalid Option!");
-            break;
-        }
-    }
+    scanf("%i %i", first, second); //first e second sao ponteiros que apontam para as variaveis first_position e second_position
+    //por isso nao precisa do &
 }
 
 int main()
@@ -75,13 +28,47 @@ int main()
     {
         printf("%i |", array[i]);
     }
-    for(i = 0; i < 10; i++)
-    {
-        for(j = 0; j < 10; j++)
-        {
-            array[i][j] = selectValues(first_position[i][j],second_position[i][j]);
-        }
-    }
 
+    int first_position, second_position;
+    selectPositions(&first_position, &second_position);
+
+    int option;
+    printf("Select the desired operation:\n");
+    printf("1. Sum\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Division\n");
+    printf("5. Exit\n");
+    scanf("%i", &option);
+
+    switch (option)
+    {
+    case 1:
+        printf("Result: %i\n", array[first_position] + array[second_position]);
+        break;
+    case 2:
+        printf("Result: %i\n", array[first_position] - array[second_position]);
+        break;
+    case 3:
+        printf("Result: %i\n", array[first_position] * array[second_position]);
+        break;
+    case 4:
+        if (array[second_position] != 0)
+        {
+            printf("Result: %f\n", (float)array[first_position] / array[second_position]);
+        }
+        else
+        {
+            printf("Division by zero is not allowed.\n");
+        }
+        break;
+    case 5:
+        printf("Exiting...\n");
+        break;
+    default:
+        printf("Invalid Option!\n");
+        break;
+    }
+    
     return 0;
 }
