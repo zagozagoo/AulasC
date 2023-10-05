@@ -4,24 +4,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int receiveValues(int *arr1)
-{
-    for (int i = 0; i < 6; i++)
-    {
-        printf("First array value in position %d \n", i);
-        scanf("%i", &arr1[i]);
-    }
-
-    for (int i = 0; i < 6; i++)
-    {
-        printf("%i |", arr1[i]);
-    }
-}
-
 int main()
 {
-    int elements[6];
-    int *array = (int *)malloc(elements * sizeof(int));
-    
-    receiveValues(elements);
+    int size;
+    int *array;
+    int sumOddNumbers = 0;
+
+    printf("\nEnter the size of the array: ");
+    scanf("%i", &size);
+
+    array = (int *)malloc(size * sizeof(int));
+    if (array == NULL)
+    {
+        printf("\nError in memory allocation");
+        return 1;
+    }
+    printf("\nEnter the array elements:\n");
+    for(int i = 0; i < size; i++)
+    {
+    scanf("%i", &array[i]);
+    }
+
+    printf("\nArray: ");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%i | ", array[i]);
+        if (array[i] % 2 != 0)
+        {
+            sumOddNumbers += array[i];
+        }
+    }
+    printf("\nThe sum for the odd numbers is: %i\n", sumOddNumbers);
+    free(array);
 }
