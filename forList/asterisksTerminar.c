@@ -31,18 +31,21 @@ int main()
     printf("Digite a altura do triângulo equilátero: ");
     scanf("%d", &altura);
 
-    for (int linha = 1; linha <= altura; linha++) {
-        // Imprima espaços em branco à esquerda para centralizar o triângulo
-        for (int espaco = 1; espaco <= altura - linha; espaco++) {
+    for (int linha = 1; linha <= altura; linha++)
+    {
+        //espaços em branco na esquerda p centralizar o triangulo
+        for (int espaco = 1; espaco <= altura - linha; espaco++)
+        {
             printf(" ");
         }
 
-        // Imprima asteriscos para formar o triângulo
-        for (int asterisco = 1; asterisco <= 2 * linha - 1; asterisco++) {
+        //asteriscos formando o triangulo
+        for (int asterisco = 1; asterisco <= 2 * linha - 1; asterisco++)
+        {
             printf("*");
         }
 
-        // Mova para a próxima linha
+        //ir para proxima linha
         printf("\n");
     }
 
