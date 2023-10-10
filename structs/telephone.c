@@ -1,0 +1,2 @@
+//Simule uma agenda telefonica. Use struct para as informações de usuários e armazene dentro de um arquivo de texto, formatado
+//Permita ao usuário encontrar um determinado contato dentro do programa utilizando seu nome.
