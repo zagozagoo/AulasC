@@ -17,13 +17,15 @@ typedef struct
     int primeira_nota;
     int segunda_nota;
     int terceira_nota;
+    float media;
 
 } Aluno;
 
 int main()
 {
     Aluno alunos[5];
-    int maiorP1, media;
+    int maiorP1 = 0;
+    float primeira_nota, segunda_nota, terceira_nota;
 
     for (int i = 0; i < 5; i++)
     {
@@ -33,22 +35,30 @@ int main()
 
     for (int i = 0; i < 5; i++)
     {
-        if(alunos[i].primeira_nota > alunos[i + 1].primeira_nota)
+        if (alunos[i].primeira_nota > alunos[maiorP1].primeira_nota)
         {
             maiorP1 = i;
         }
     }
 
-    
+    printf("\nO aluno com maior nota da primeira avaliacao: %s\n", alunos[maiorP1].nome);
+
+    for (int i = 0; i < 5; i++)
+    {
+        alunos[i].media = alunos[i].primeira_nota + alunos[i].segunda_nota + alunos[i].terceira_nota / 3;
+    }
 
     printf("\n___Aprovaçoes___\n");
-    if (media >= 6)
+    for (int i = 0; i < 5; i++)
     {
-        prinft("\nAluno: %s = Aprovado!\n", alunos[i].nome);
-    }
-    else
-    {
-        prinft("\nAluno: %s = Reprovado\n", alunos[i].nome);
+        if (alunos[i].media >= 6)
+        {
+            prinft("\nAluno: %s = Aprovado!\n", alunos[i].nome);
+        }
+        else
+        {
+            prinft("\nAluno: %s = Reprovado\n", alunos[i].nome);
+        }
     }
     
 
