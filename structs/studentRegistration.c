@@ -4,12 +4,12 @@
 #include <stdio.h>
 #include <string.h>
 
-    typedef struct 
-    {
-        char nome[50];
-        int matricula;
-        char curso[30];
-    } Aluno;
+typedef struct 
+{
+    char nome[50];
+    int matricula;
+    char curso[30];
+} Aluno;
 
 int main()
 {
