@@ -31,13 +31,14 @@ int main()
     Compromisso compromisso;
 
     printf("\nInsira respectivamente: DIA, MES, ANO, HORA e MINUTO para o compromisso:\n");
-    scanf("\n%i %i %i %i %i\n", &compromisso.data1.dia, &compromisso.data1.mes, &compromisso.data1.ano, &compromisso.horario1.hora, &compromisso.horario1.minuto);
+    scanf("%i %i %i %i %i", &compromisso.data1.dia, &compromisso.data1.mes, &compromisso.data1.ano, &compromisso.horario1.hora, &compromisso.horario1.minuto);
     printf("Digite a descricao do compromisso:\n");
-    scanf("\n%s\n", &compromisso.descricao);
-    
+    scanf(" %s", &compromisso.descricao);
+    system("cls");
+
     printf("\n_____Seu evento foi adicionado!_____\n");
     printf("\n%i / %i / %i \n%i : %i\n", compromisso.data1.dia, compromisso.data1.mes, compromisso.data1.ano, compromisso.horario1.hora, compromisso.horario1.minuto);
-    scanf("\n%s\n", compromisso.descricao);
+    printf("\n%s", compromisso.descricao);
 
     return 0;
 }
