@@ -5,26 +5,26 @@
 #include <stdio.h>
 #include <string.h>
 
-    typedef struct
-    {
-        int hora;
-        int minuto;
-        int segundo;
-    }Horario;
+typedef struct
+{
+    int hora;
+    int minuto;
+    int segundo;
+} Horario;
 
-    typedef struct 
-    {
-        int dia;
-        int mes;
-        int ano;
-    }Data;
+typedef struct 
+{
+    int dia;
+    int mes;
+    int ano;
+} Data;
 
-    typedef struct 
-    {
-        Data data1;
-        Horario horario1;
-        char descricao[60];
-    }Compromisso;
+typedef struct 
+{
+    Data data1;
+    Horario horario1;
+    char descricao[60];
+} Compromisso;
 
 int main()
 {
@@ -38,7 +38,7 @@ int main()
 
     printf("\n_____Seu evento foi adicionado!_____\n");
     printf("\n%i / %i / %i \n%i : %i\n", compromisso.data1.dia, compromisso.data1.mes, compromisso.data1.ano, compromisso.horario1.hora, compromisso.horario1.minuto);
-    printf("\n%s", compromisso.descricao);
+    printf("\n%s\n", compromisso.descricao);
 
     return 0;
 }
