@@ -25,14 +25,19 @@ int main()
 {
     Aluno alunos[5];
     int maiorP1 = 0;
-    float primeira_nota, segunda_nota, terceira_nota;
+    int maiorMedia = 0;
+    int menorMedia = 0;
 
+    // a)
     for (int i = 0; i < 5; i++)
     {
         printf("\nDigite numero de matricula, nome, e notas da primeria, segunda e terceira prova, respectivamente\n");
         scanf(" %i %s %i %i %i", &alunos[i].matricula, &alunos[i].nome, &alunos[i].primeira_nota, &alunos[i].segunda_nota, &alunos[i].terceira_nota);
     }
 
+
+
+    // b)
     for (int i = 0; i < 5; i++)
     {
         if (alunos[i].primeira_nota > alunos[maiorP1].primeira_nota)
@@ -40,24 +45,40 @@ int main()
             maiorP1 = i;
         }
     }
-
     printf("\nO aluno com maior nota da primeira avaliacao: %s\n", alunos[maiorP1].nome);
+
+
+
+    // c)
+    
 
     for (int i = 0; i < 5; i++)
     {
-        alunos[i].media = alunos[i].primeira_nota + alunos[i].segunda_nota + alunos[i].terceira_nota / 3;
+        alunos[i].media = (alunos[i].primeira_nota + alunos[i].segunda_nota + alunos[i].terceira_nota) / 3;
+        if (alunos[i].media > alunos[maiorMedia].media)
+        {
+            maiorMedia = i;
+        }
+        if (alunos[i].media < alunos[menorMedia].media)
+        {
+            menorMedia = i;
+        }
     }
+    printf("\nO aluno com maior media eh: %s\n", alunos[maiorMedia].nome);
+    printf("\nO aluno com menor media eh: %s\n", alunos[menorMedia].nome);
 
+
+    // e)
     printf("\n___Aprovaçoes___\n");
     for (int i = 0; i < 5; i++)
     {
         if (alunos[i].media >= 6)
         {
-            prinft("\nAluno: %s = Aprovado!\n", alunos[i].nome);
+            printf("\nAluno: %s = Aprovado!\n", alunos[i].nome);
         }
         else
         {
-            prinft("\nAluno: %s = Reprovado\n", alunos[i].nome);
+            printf("\nAluno: %s = Reprovado\n", alunos[i].nome);
         }
     }
     
