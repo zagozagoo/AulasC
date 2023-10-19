@@ -1,6 +1,35 @@
 #ifndef ARRFUNCTIONS_H
 #define ARRFUNCTIONS_H
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//Crie uma header com funções que receberão um vetor dinâmico e permitirão manipulá-lo. Instruções:
+
+//Adicionar elemento ao array;
+//Remover elemento do array;
+//Aumentar a capacidade de memória do array;
+//Diminuir a capacidade de memória do array;
+
+//Crie uma main() para fazer os testes;
+
+//Quando a quantidade de elementos chegar ao limite da capacidade, deverá ser realocado o DOBRO de memória atual ocupada
+
+typedef struct
+{
+    int *array = NULL;
+    int size = 0;
+    int capacity = 0;
+} DynamicVector;
+
+DynamicVector* createVector(int initialCapacity);
+
+void addElements(DynamicVector *vector, int element);
+void removElements(DynamicVector *vector, int index);
+void increaseCapacity(DynamicVector *vector);
+void decreaseCapacity(DynamicVector *vector);
+void destroyVector(DynamicVector *vector);
 
 int receiveValues(int *arr1, int *arr2)
 {
